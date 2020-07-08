@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://feifeify.github.io</id>
+    <title>TODSING</title>
+    <updated>2020-07-08T07:54:58.604Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://feifeify.github.io"/>
+    <link rel="self" href="https://feifeify.github.io/atom.xml"/>
+    <subtitle>搞点技术，吹吹水</subtitle>
+    <logo>https://feifeify.github.io/images/avatar.png</logo>
+    <icon>https://feifeify.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, TODSING</rights>
+    <entry>
+        <title type="html"><![CDATA[ECSHOP商城优化_把ECSHOP默认302重定向改为301永久重定向]]></title>
+        <id>https://feifeify.github.io/post/ecshop-301/</id>
+        <link href="https://feifeify.github.io/post/ecshop-301/">
+        </link>
+        <updated>2019-12-29T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>将原有的ECSHOP 302重定向改为301永久重定向,避免被搜索引擎封杀category/goods页</p>
+<p>打开 includes/lib_base.php</p>
+<p>查找</p>
+<p>if (preg_match(‘/^\s*location:/is’, <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;}&#039;, got &#039;EOF&#039; at end of input: …ng))
+{
+@header('>string))
+{
+@header(</span>string . “\n”, $replace);</p>
+<p>exit();<br>
+}</p>
+<p>改为</p>
+<p>if (preg_match('/^\s*location:/is', <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;}&#039;, got &#039;EOF&#039; at end of input: …       @header('>string))
+    {
+    @header(&#039;HTTP/1.1 301 Moved Permanently&#039;);// 将原有的302重定向改为301永久重定向,避免被搜索引擎封杀category/goods页
+        @header(</span>string . &quot;\n&quot;, $replace);<br>
+exit();<br>
+}</p>
+]]></content>
+    </entry>
+</feed>
